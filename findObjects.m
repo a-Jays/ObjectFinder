@@ -16,6 +16,12 @@ function mine_regions = findObjects( img )
 		fprintf('Provide one (1) (ek) image as argument.');
 	end
 	
+	if exist( 'OCTAVE_VERSION', 'builtin' )
+		ENVT = 'Octave';
+	else
+		ENVT = 'Matlab';
+	end
+	
 	img = medfilt2( rgb2gray(img), [3 3] );
 	
 	img = img.^1.1;
