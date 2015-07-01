@@ -1,4 +1,4 @@
-function mine_regions = findObjects( img )
+function mine_regions = findObjects( img, DB )
 
 	% top-level function to find mine & mine-like objects in SONAR image.
 	% - takes `img` the colour-image as an argument, cleans it and applies
@@ -37,6 +37,6 @@ function mine_regions = findObjects( img )
 	retained_centres = getCentres( retained_C );
 	boundingboxes = getBoundingBox( img, retained_centres, 1 );
 	
-	mine_regions = SURFTest( boundingboxes );
+	mine_regions = SURFTest( boundingboxes, DB );
 	
 end	
