@@ -1,10 +1,11 @@
 function ROIs = getBoundingBox( img, C, input_type )
 
 	% function to obtain a bounding box ROI around the detected object.
-	% NOTE:
+	% 
 	% there are two implementations of the function, depending on `input_type`:
 	% 	1. `C` is a cell-array of centroid points, in which case a constant-size ROI is returned.
 	%	2. `C` is a cell-array of contours, in which case a bounding box must be found.
+	% NOTE: each of the locations in `C` is an [x y] pair; y being used for rows, and x for columns.
 	
 	if input_type == 1
 	
